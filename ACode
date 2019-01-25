@@ -64,12 +64,9 @@ int alphaCode(string s)
 int main() {
     vector<string> arr;
     vector<int> result;
-    string s;
-    cin>>s;
-    cout<<alphaCode(s);
-    //arr = input_string(arr);
-    /*for(string s: arr)
+    arr = input_string(arr);
+    for(string s: arr)
         result.push_back(alphaCode(s));
     for(int i:result)
-        cout<<i<<endl;*/
+        cout<<i<<endl;
 }
