@@ -37,7 +37,7 @@ int alphaCode(string s)
         int saved = search_string(s);
         if(saved != -1)
         {
-            cout<<s<<" "<<saved<<endl;
+            //cout<<s<<" "<<saved<<endl;
             return saved;
         }
         if(s.length()<=1)return 1;
