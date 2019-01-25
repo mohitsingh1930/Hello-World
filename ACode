@@ -59,9 +59,9 @@ int alphaCode(string s)
                 */
                 num2 = alphaCode(s.substr(2,s.length()-2));
                 //arr[temp-1] = num2;}
-            str.push_back(s);
-            str.push_back(to_string(num1+num2));
         }
+        str.push_back(s);
+        str.push_back(to_string(num1+num2));
         return num1+num2;
 }
 int main() {
