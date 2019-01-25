@@ -40,25 +40,28 @@ int alphaCode(string s)
             //cout<<s<<" "<<saved<<endl;
             return saved;
         }
-        if(s.length()<=1)return 1;
+        if(s.length()<=1 && s[0]!='0')return 1;
         int num1=0, num2=0;
         /*int temp_1 = (int)(s[0]-'0');
         if(arr[temp_1-1] != -1){cout<<"A"<<endl;
             num1 = arr[temp_1-1];}
         else{
         */
-        num1 = alphaCode(s.substr(1,s.length()-1));
-        //arr[(int)(s[0]-'0')-1] = num1;}
-        int temp = stoi(s.substr(0,2));
-        if(temp<27)
-            /*if(arr[temp-1] != -1){cout<<"B"<<endl;
-            num2 = arr[temp-1];}
-            else{
-            */
-            num2 = alphaCode(s.substr(2,s.length()-2));
-            //arr[temp-1] = num2;}
-        str.push_back(s);
-        str.push_back(to_string(num1+num2));
+        if(s[0]!='0')
+        {
+            num1 = alphaCode(s.substr(1,s.length()-1));
+            //arr[(int)(s[0]-'0')-1] = num1;}
+            int temp = stoi(s.substr(0,2));
+            if(temp<27 && temp>0)
+                /*if(arr[temp-1] != -1){cout<<"B"<<endl;
+                num2 = arr[temp-1];}
+                else{
+                */
+                num2 = alphaCode(s.substr(2,s.length()-2));
+                //arr[temp-1] = num2;}
+            str.push_back(s);
+            str.push_back(to_string(num1+num2));
+        }
         return num1+num2;
 }
 int main() {
